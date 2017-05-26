@@ -6,21 +6,21 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button_rock"
+        android:id="@+id/b_rock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Rock" />
 
     <Button
-        android:id="@+id/button_paper"
+        android:id="@+id/b_paper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="paper" />
 
     <Button
-        android:id="@+id/button_scissor"
+        android:id="@+id/b_scissor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
