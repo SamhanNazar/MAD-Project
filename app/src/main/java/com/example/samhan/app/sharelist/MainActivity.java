@@ -5,13 +5,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
+
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
     Button b_rock, b_paper, b_scissor;
     ImageView iv_cpu, iv_me;
 
-    String playerChoice, cpuChoice;
+    String playerChoice, cpuChoice, result;
+
+    Random r;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
         iv_cpu = (ImageView) findViewById(R.id.iv_cpu);
         iv_me = (ImageView) findViewById(R.id.iv_me);
 
+        r = new Random();
+
         b_scissor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playerChoice = "scissor";
+                playerChoice = "rock";
+                iv_me.setImageResource(R.drawable.scissors);
                 calculate();
             }
         });
@@ -35,13 +43,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 playerChoice = "paper";
+                iv_me.setImageResource(R.drawable.paper);
                 calculate();
+
             }
         });
         b_rock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                playerChoice = "rock";
+                playerChoice = "scissors";
+                iv_me.setImageResource(R.drawable.rock);
                 calculate();
             }
         });
@@ -49,7 +60,61 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void calculate(){
+        int cpu = r.nextInt(3);
+        result = cpu+"";
+        if(cpu == 0)
+        {cpuChoice = "rock";
+        iv_cpu.setImageResource(R.drawable.rock);
+            }
+        else if(cpu == 1)
+        {cpuChoice = "paper";
+            iv_cpu.setImageResource(R.drawable.paper);
+        }
+        else if(cpu == 2)
+        {cpuChoice = "scissors";
+            iv_cpu.setImageResource(R.drawable.scissors);
+        }
 
+
+        if(playerChoice.equals("rock") && cpuChoice.equals("paper"))
+        {
+            result = "You Lose";
+        }
+        if(playerChoice.equals("rock") && cpuChoice.equals("scissors"))
+        {
+            result = "You win";
+        }
+        if(playerChoice.equals("paper") && cpuChoice.equals("rock"))
+        {
+            result = "You lose";
+        }
+        if(playerChoice.equals("paper") && cpuChoice.equals("scissors"))
+        {
+            result = "You Lose";
+        }
+        if(playerChoice.equals("scissors") && cpuChoice.equals("paper"))
+        {
+            result = "You win";
+        }
+        if(playerChoice.equals("scissors") && cpuChoice.equals("rock"))
+        {
+            result = "You Lose";
+        }
+        if(playerChoice.equals("rock") && cpuChoice.equals("rock"))
+        {
+            result = "draw";
+        }
+        if(playerChoice.equals("paper") && cpuChoice.equals("paper"))
+        {
+            result = "draw";
+        }
+        if(playerChoice.equals("scissors") && cpuChoice.equals("scissors"))
+        {
+            result = "draw";
+        }
+
+
+        Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
     }
 
 }

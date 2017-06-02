@@ -10,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="?attr/colorPrimaryDark"
         android:text="Rock" />
 
     <Button
@@ -17,6 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="?attr/colorPrimaryDark"
         android:text="paper" />
 
     <Button
@@ -24,5 +26,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:background="?android:attr/colorPrimaryDark"
         android:text="scissors" />
 </LinearLayout>

@@ -14,34 +14,24 @@
 
         <include
             layout="@layout/buttons"
-            layout_alignParentEnd="true"
-            layout_alignParentRight="true"
-            layout_alignParentTop="true"
-            layout_marginEnd="97dp"
-            layout_marginRight="97dp"
-            layout_marginTop="72dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:id="@+id/include2" />
+            android:id="@+id/include2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <include
             layout="@layout/hands"
-            layout_alignParentEnd="true"
-            layout_alignParentRight="true"
-            layout_alignParentTop="true"
-            layout_marginEnd="89dp"
-            layout_marginRight="89dp"
-            layout_marginTop="188dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_above="@+id/include2"
             android:layout_alignParentTop="true"
-            android:layout_above="@+id/include2" />
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
